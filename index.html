@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ishan's Portfolio — Ai production portfolio</title>
+  <link rel="icon" type="image/png" href="favicon.png">
   <meta name="description" content="Playful portfolio of Ishan, an AI production designer working across branding, Dhara AD, motion and publication design." />
   <meta name="author" content="Ishan" />
   <meta property="og:title" content="Ishan's Portfolio" />
@@ -65,17 +66,28 @@
     .lightbox-pop { animation: lightbox-pop 480ms cubic-bezier(0.34, 1.56, 0.64, 1) both; }
 
     /* SKILL TILE */
-    .skill-tile {
+    .skill-wrap {
+      display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
       --dist: 1;
-      transition: transform 180ms cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 200ms ease;
+      transition: transform 180ms cubic-bezier(0.34, 1.56, 0.64, 1);
       transform: scale(calc(1 + (1 - var(--dist)) * 0.45)) rotate(calc((1 - var(--dist)) * -6deg));
       will-change: transform;
-      width: 56px; height: 56px; border-radius: 1rem;
-      display: grid; place-items: center;
-      color: #fff; font-weight: 700; font-size: 1.125rem;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
-    .skill-tile:hover { transform: scale(1.25) rotate(-8deg); }
+    .skill-wrap:hover { transform: scale(1.25) rotate(-8deg); }
+    .skill-tile {
+      width: 64px; height: 64px; border-radius: 1.125rem;
+      display: grid; place-items: center;
+      color: #fff; font-weight: 800; font-size: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      letter-spacing: -0.02em;
+      flex-shrink: 0;
+    }
+    .skill-label {
+      font-size: 0.65rem; font-weight: 700; color: var(--ink);
+      text-align: center; letter-spacing: 0.03em;
+      max-width: 72px; line-height: 1.2;
+      opacity: 0.75;
+    }
 
     /* HERO */
     #hero { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 0 1.5rem; }
@@ -119,7 +131,7 @@
     /* SKILLS */
     #skills { padding: 5rem 1.5rem; }
     #skills h2 { text-align: center; font-size: clamp(1.75rem, 5vw, 2.5rem); margin-bottom: 2.5rem; }
-    .skills-bar { max-width: 56rem; margin: 0 auto; background: oklch(0.88 0.045 55 / 0.9); border-radius: 9999px; padding: 1.25rem 1.5rem; display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap; gap: 0.75rem; }
+    .skills-bar { max-width: 56rem; margin: 0 auto; background: oklch(0.88 0.045 55 / 0.9); border-radius: 2rem; padding: 1.75rem 2rem; display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap; gap: 1.25rem; }
 
     /* ABOUT */
     #about { position: relative; z-index: 10; padding: 6rem 1.5rem 7rem; }
@@ -227,14 +239,34 @@
 <section id="skills">
   <h2>My Skills</h2>
   <div class="skills-bar" id="skills-bar">
-    <div class="skill-tile" style="background:#0ACF83" title="Figma">F</div>
-    <div class="skill-tile" style="background:#FF9A00" title="Illustrator">Ai</div>
-    <div class="skill-tile" style="background:#31A8FF" title="Photoshop">Ps</div>
-    <div class="skill-tile" style="background:#9999FF" title="After Effects">Ae</div>
-    <div class="skill-tile" style="background:#FF3366" title="InDesign">Id</div>
-    <div class="skill-tile" style="background:#00C853" title="Dimension">Dn</div>
-    <div class="skill-tile" style="background:#111111" title="Procreate">P</div>
-    <div class="skill-tile" style="background:#111111" title="Framer">F</div>
+    <div class="skill-wrap">
+      <div class="skill-tile" style="background:#0ACF83">F</div>
+      <span class="skill-label">Figma</span>
+    </div>
+    <div class="skill-wrap">
+      <div class="skill-tile" style="background:#C0392B">Ad</div>
+      <span class="skill-label">Art Direction</span>
+    </div>
+    <div class="skill-wrap">
+      <div class="skill-tile" style="background:#31A8FF">Ps</div>
+      <span class="skill-label">Photoshop</span>
+    </div>
+    <div class="skill-wrap">
+      <div class="skill-tile" style="background:#1A1A2E">Dr</div>
+      <span class="skill-label">DaVinci Resolve</span>
+    </div>
+    <div class="skill-wrap">
+      <div class="skill-tile" style="background:#7C3AED">Ai</div>
+      <span class="skill-label">AI Tools</span>
+    </div>
+    <div class="skill-wrap">
+      <div class="skill-tile" style="background:#F59E0B">Vs</div>
+      <span class="skill-label">Visual Storytelling</span>
+    </div>
+    <div class="skill-wrap">
+      <div class="skill-tile" style="background:#0EA5E9">Pe</div>
+      <span class="skill-label">Prompt Engineering</span>
+    </div>
   </div>
 </section>
 
@@ -427,7 +459,7 @@ hero.addEventListener('mouseleave', () => { hero.style.setProperty('--mx','0'); 
 
 // SKILL TILES
 const skillsBar = document.getElementById('skills-bar');
-const tiles = Array.from(skillsBar.querySelectorAll('.skill-tile'));
+const tiles = Array.from(skillsBar.querySelectorAll('.skill-wrap'));
 window.addEventListener('mousemove', e => {
   tiles.forEach(t => {
     const r = t.getBoundingClientRect();

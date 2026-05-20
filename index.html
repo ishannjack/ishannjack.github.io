@@ -288,7 +288,7 @@
 <script>
 const featured = [
   { title:"Theyyam", tag:"Theyyam Art illustrations", img:"assets/PiTheyyam.jpg", desc:"A series of rotoscopic AI-generated illustrations inspired by the visual richness, movement, and cultural essence of Theyyam.", images:["assets/Theyyam/theyyam1.jpg","assets/Theyyam/theyyam2.jpg","assets/Theyyam/theyyam3.jpg","assets/Theyyam/theyyam4.jpg"] },
-  { title:"Dhara ad campaign", tag:"Dhara AD", img:"assets/work-snacntrack.jpg", video:"assets/Dhara-ad.mp4", desc:"A modern advertising campaign for DHARA featuring AI-crafted visuals, refined layouts, and warm brand storytelling. Designed to blend contemporary aesthetics with expressive visual direction.", images:["assets/dharaframes/dhara1.jpg","assets/dharaframes/dhara2.jpg","assets/dharaframes/dhara3.jpg","assets/dharaframes/dhara4.jpg","assets/dharaframes/dhara5.jpg","assets/dharaframes/dhara6.jpg","assets/dharaframes/dhara7.jpg","assets/dharaframes/dhara8.jpg"] },
+  { title:"Dhara ad campaign", tag:"Dhara AD", img:"assets/work-snacntrack.jpg", video:"https://drive.google.com/file/d/1yUIFtiUWuEW_SkFGlVFKTnjaLZn9b2it/preview", desc:"A modern advertising campaign for DHARA featuring AI-crafted visuals, refined layouts, and warm brand storytelling. Designed to blend contemporary aesthetics with expressive visual direction.", images:["assets/dharaframes/dhara1.jpg","assets/dharaframes/dhara2.jpg","assets/dharaframes/dhara3.jpg","assets/dharaframes/dhara4.jpg","assets/dharaframes/dhara5.jpg","assets/dharaframes/dhara6.jpg","assets/dharaframes/dhara7.jpg","assets/dharaframes/dhara8.jpg"] },
   { title:"Ai Walls", tag:"AI walls", img:"assets/work-week-plate.jpg", desc:"A curated collection of AI-generated wallpapers exploring futuristic visuals, abstract compositions, and immersive digital aesthetics.", images:["assets/aiwalls/aw1.jpg","assets/aiwalls/aw2.jpg","assets/aiwalls/aw3.jpg","assets/aiwalls/aw4.jpg","assets/aiwalls/aw5.jpg"] }
 ];
 
@@ -297,7 +297,7 @@ const works = [
   { title:"Theyyam", tag:"Theyyam Art illustrations", img:"assets/PiTheyyam.jpg", desc:"A series of rotoscopic AI-generated illustrations inspired by the visual richness, movement, and cultural essence of Theyyam.", images:["assets/Theyyam/theyyam1.jpg","assets/Theyyam/theyyam2.jpg","assets/Theyyam/theyyam3.jpg","assets/Theyyam/theyyam4.jpg"] },
   { title:"Thumbnail ideas", tag:"AI Thumbnail", img:"assets/davincci.jpg", desc:"A collection of AI-generated thumbnail concepts designed for high visual impact, bold storytelling and attention-driven digital content.", images:["assets/thumbnails/tn1.jpg","assets/thumbnails/tn2.jpg","assets/thumbnails/tn3.jpg","assets/thumbnails/tn4.jpg","assets/thumbnails/tn5.jpg"] },
   { title:"Ai Walls", tag:"AI walls", img:"assets/work-week-plate.jpg", desc:"A curated collection of AI-generated wallpapers exploring futuristic visuals, abstract compositions, and immersive digital aesthetics.", images:["assets/aiwalls/aw1.jpg","assets/aiwalls/aw2.jpg","assets/aiwalls/aw3.jpg","assets/aiwalls/aw4.jpg","assets/aiwalls/aw5.jpg"] },
-  { title:"Dhara ad campaign", tag:"Dhara AD", img:"assets/work-snacntrack.jpg", video:"assets/Dhara-ad.mp4", desc:"A modern advertising campaign for DHARA featuring AI-crafted visuals, refined layouts, and warm brand storytelling.", images:["assets/dharaframes/dhara1.jpg","assets/dharaframes/dhara2.jpg","assets/dharaframes/dhara3.jpg","assets/dharaframes/dhara4.jpg","assets/dharaframes/dhara5.jpg","assets/dharaframes/dhara6.jpg","assets/dharaframes/dhara7.jpg","assets/dharaframes/dhara8.jpg"] },
+  { title:"Dhara ad campaign", tag:"Dhara AD", img:"assets/work-snacntrack.jpg", video:"https://drive.google.com/file/d/1yUIFtiUWuEW_SkFGlVFKTnjaLZn9b2it/preview", desc:"A modern advertising campaign for DHARA featuring AI-crafted visuals, refined layouts, and warm brand storytelling.", images:["assets/dharaframes/dhara1.jpg","assets/dharaframes/dhara2.jpg","assets/dharaframes/dhara3.jpg","assets/dharaframes/dhara4.jpg","assets/dharaframes/dhara5.jpg","assets/dharaframes/dhara6.jpg","assets/dharaframes/dhara7.jpg","assets/dharaframes/dhara8.jpg"] },
   { title:"Animations", tag:"Animations", img:"assets/work-animations.jpg", desc:"Motion and animation explorations.", images:[] }
 ];
 
@@ -359,9 +359,12 @@ const closeBtn = document.getElementById('lightbox-close');
 function openLightbox(w) {
   lbTop.innerHTML = '';
   if (w.video) {
-    const v = document.createElement('video');
-    v.src = w.video; v.autoplay = true; v.muted = true; v.loop = true; v.controls = true;
-    v.className = 'media'; lbTop.appendChild(v);
+    const v = document.createElement('iframe');
+    v.src = w.video; v.className = 'media';
+    v.setAttribute('allow', 'autoplay');
+    v.setAttribute('allowfullscreen', '');
+    v.style.border = 'none';
+    lbTop.appendChild(v);
   } else {
     const img = document.createElement('img');
     img.src = w.img; img.alt = w.title; img.className = 'media'; lbTop.appendChild(img);

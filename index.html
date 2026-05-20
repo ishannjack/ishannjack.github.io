@@ -382,7 +382,9 @@ function openLightbox(w) {
     img.src = src; img.alt = w.title + ' Image ' + (n+1); img.loading = 'lazy';
     const lbl = document.createElement('span');
     lbl.className = 'img-label'; lbl.textContent = 'Image ' + (n+1);
+    div.style.cursor = 'zoom-in';
     div.appendChild(img); div.appendChild(lbl); lbGrid.appendChild(div);
+    div.addEventListener('click', () => openViewer(src));
   });
   overlay.classList.add('open');
   document.body.style.overflow = 'hidden';
@@ -390,7 +392,29 @@ function openLightbox(w) {
 function closeLightbox() { overlay.classList.remove('open'); document.body.style.overflow = ''; }
 closeBtn.addEventListener('click', closeLightbox);
 overlay.addEventListener('click', e => { if (e.target === overlay) closeLightbox(); });
-window.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+window.addEventListener('keydown', e => { if (e.key === 'Escape') { closeViewer(); closeLightbox(); } });
+
+// FULL-SIZE IMAGE VIEWER
+const viewer = document.createElement('div');
+viewer.id = 'img-viewer';
+viewer.style.cssText = 'display:none;position:fixed;inset:0;z-index:100;background:rgba(0,0,0,0.92);align-items:center;justify-content:center;cursor:zoom-out;';
+viewer.innerHTML = '<img id="viewer-img" style="max-width:92vw;max-height:92vh;object-fit:contain;border-radius:1rem;box-shadow:0 30px 80px rgba(0,0,0,0.6);user-select:none;" /><button id="viewer-close" style="position:fixed;top:1.25rem;right:1.25rem;width:2.75rem;height:2.75rem;border-radius:9999px;background:white;color:#111;border:none;font-size:1.2rem;cursor:pointer;display:grid;place-items:center;font-weight:700;">&#10005;</button>';
+document.body.appendChild(viewer);
+const viewerImg = document.getElementById('viewer-img');
+
+function openViewer(src) {
+  viewerImg.src = src;
+  viewer.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+function closeViewer() {
+  viewer.style.display = 'none';
+}
+viewer.addEventListener('click', e => { if (e.target === viewer || e.target === viewerImg) closeViewer(); });
+document.getElementById('viewer-close').addEventListener('click', closeViewer);
+
+// Only lightbox grid thumbnails open full-size viewer on click
+// (handled per-div via div.addEventListener above)
 
 // HERO PARALLAX
 const hero = document.getElementById('hero');

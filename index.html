@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ishan's Portfolio — Ai production portfolio</title>
-  <link rel="icon" type="image/png" href="./favicon.png?v=3">
+  <link rel="icon" type="image/png" href="favicon.png">
   <meta name="description" content="Playful portfolio of Ishan, an AI production designer working across branding, Dhara AD, motion and publication design." />
   <meta name="author" content="Ishan" />
   <meta property="og:title" content="Ishan's Portfolio" />
@@ -318,22 +318,185 @@
 </section>
 
 <script>
+// ─── FEATURED WORKS ──────────────────────────────────────────────────────────
+// Order: Theyyam | Dhara AD | The Verdict
+// (AI Walls removed from featured; The Verdict replaces it)
 const featured = [
-  { title:"Theyyam", tag:"Theyyam Art illustrations", img:"assets/PiTheyyam.jpg", desc:"A series of rotoscopic AI-generated illustrations inspired by the visual richness, movement, and cultural essence of Theyyam.", images:["assets/Theyyam/theyyam1.jpg","assets/Theyyam/theyyam2.jpg","assets/Theyyam/theyyam3.jpg","assets/Theyyam/theyyam4.jpg"] },
-  { title:"Dhara ad campaign", tag:"Dhara AD", img:"assets/work-snacntrack.jpg", video:"https://drive.google.com/file/d/1yUIFtiUWuEW_SkFGlVFKTnjaLZn9b2it/preview", desc:"A modern advertising campaign for DHARA featuring AI-crafted visuals, refined layouts, and warm brand storytelling. Designed to blend contemporary aesthetics with expressive visual direction.", images:["assets/dharaframes/dhara1.jpg","assets/dharaframes/dhara2.jpg","assets/dharaframes/dhara3.jpg","assets/dharaframes/dhara4.jpg","assets/dharaframes/dhara5.jpg","assets/dharaframes/dhara6.jpg","assets/dharaframes/dhara7.jpg","assets/dharaframes/dhara8.jpg"] },
-  { title:"Ai Walls", tag:"AI walls", img:"assets/work-week-plate.jpg", desc:"A curated collection of AI-generated wallpapers exploring futuristic visuals, abstract compositions, and immersive digital aesthetics.", images:["assets/aiwalls/aw1.jpg","assets/aiwalls/aw2.jpg","assets/aiwalls/aw3.jpg","assets/aiwalls/aw4.jpg","assets/aiwalls/aw5.jpg"] }
+  {
+    title: "Theyyam",
+    tag: "Theyyam Art illustrations",
+    img: "assets/PiTheyyam.jpg",
+    desc: "A series of rotoscopic AI-generated illustrations inspired by the visual richness, movement, and cultural essence of Theyyam.",
+    images: [
+      "assets/Theyyam/theyyam1.jpg",
+      "assets/Theyyam/theyyam2.jpg",
+      "assets/Theyyam/theyyam3.jpg",
+      "assets/Theyyam/theyyam4.jpg"
+    ]
+  },
+
+    {
+    title: "The Verdict",
+    tag: "The Verdict-Short Film",
+    img: "assets/theverdict/verdict-cover.jpg",
+    video: "https://drive.google.com/file/d/1NL4STIsnbK3RPa6ILWHVmA2VgShnBPxX/preview",
+    desc: "A cinematic AI drama short that explores tension, consequence, and human emotion through striking visuals and bold narrative direction. Crafted using AI filmmaking tools to push the boundaries of short-form storytelling.",
+    images: [
+      "assets/theverdict/tv1.jpg",
+      "assets/theverdict/tv2.jpg",
+      "assets/theverdict/tv3.jpg",
+      "assets/theverdict/tv4.jpg",
+      "assets/theverdict/tv5.jpg",
+      "assets/theverdict/tv6.jpg",
+      "assets/theverdict/tv7.jpg",
+      "assets/theverdict/tv8.jpg",
+      "assets/theverdict/tv9.jpg",
+      "assets/theverdict/tv10.jpg",
+      "assets/theverdict/tv11.jpg",
+      "assets/theverdict/tv12.jpg",
+      "assets/theverdict/tv13.jpg",
+      "assets/theverdict/tv14.jpg",
+      "assets/theverdict/tv15.jpg",
+
+    ]
+  },
+  {
+    title: "Dhara ad campaign",
+    tag: "Dhara AD",
+    img: "assets/work-snacntrack.jpg",
+    video: "https://drive.google.com/file/d/1yUIFtiUWuEW_SkFGlVFKTnjaLZn9b2it/preview",
+    desc: "A modern advertising campaign for DHARA featuring AI-crafted visuals, refined layouts, and warm brand storytelling. Designed to blend contemporary aesthetics with expressive visual direction.",
+    images: [
+      "assets/dharaframes/dhara1.jpg",
+      "assets/dharaframes/dhara2.jpg",
+      "assets/dharaframes/dhara3.jpg",
+      "assets/dharaframes/dhara4.jpg",
+      "assets/dharaframes/dhara5.jpg",
+      "assets/dharaframes/dhara6.jpg",
+      "assets/dharaframes/dhara7.jpg",
+      "assets/dharaframes/dhara8.jpg"
+    ]
+  },
+  {
+    title: "Client Works:Sample",
+    tag: "Client Works:Sample",
+    img: "assets/Clientworks/client.png",
+    desc: "A series of rotoscopic AI-generated illustrations inspired by the visual richness, movement, and cultural essence of Theyyam.",
+    images: [
+      "assets/Clientworks/c1.png",
+      "assets/Clientworks/c2.png",
+      "assets/Clientworks/c3.png",
+      "assets/Clientworks/c4.png",
+      "assets/Clientworks/c5.png",
+    ]
+  }
+
 ];
 
+// ─── ALL WORKS ────────────────────────────────────────────────────────────────
+// The Verdict added; AI Walls kept here; all others unchanged
 const works = [
-  { title:"Wildlife", tag:"Wildlife Ai illustrations", img:"assets/lion.jpg", desc:"A collection of AI-generated wildlife illustrations focused on realistic visuals, detailed textures and cinematic natural aesthetics.", images:["assets/wildlife/wl1.jpg","assets/wildlife/wl2.jpg","assets/wildlife/wl3.jpg"] },
-  { title:"Theyyam", tag:"Theyyam Art illustrations", img:"assets/PiTheyyam.jpg", desc:"A series of rotoscopic AI-generated illustrations inspired by the visual richness, movement, and cultural essence of Theyyam.", images:["assets/Theyyam/theyyam1.jpg","assets/Theyyam/theyyam2.jpg","assets/Theyyam/theyyam3.jpg","assets/Theyyam/theyyam4.jpg"] },
-  { title:"Thumbnail ideas", tag:"AI Thumbnail", img:"assets/davincci.jpg", desc:"A collection of AI-generated thumbnail concepts designed for high visual impact, bold storytelling and attention-driven digital content.", images:["assets/thumbnails/tn1.jpg","assets/thumbnails/tn2.jpg","assets/thumbnails/tn3.jpg","assets/thumbnails/tn4.jpg","assets/thumbnails/tn5.jpg"] },
-  { title:"Ai Walls", tag:"AI walls", img:"assets/work-week-plate.jpg", desc:"A curated collection of AI-generated wallpapers exploring futuristic visuals, abstract compositions, and immersive digital aesthetics.", images:["assets/aiwalls/aw1.jpg","assets/aiwalls/aw2.jpg","assets/aiwalls/aw3.jpg","assets/aiwalls/aw4.jpg","assets/aiwalls/aw5.jpg"] },
-  { title:"Dhara ad campaign", tag:"Dhara AD", img:"assets/work-snacntrack.jpg", video:"https://drive.google.com/file/d/1yUIFtiUWuEW_SkFGlVFKTnjaLZn9b2it/preview", desc:"A modern advertising campaign for DHARA featuring AI-crafted visuals, refined layouts, and warm brand storytelling.", images:["assets/dharaframes/dhara1.jpg","assets/dharaframes/dhara2.jpg","assets/dharaframes/dhara3.jpg","assets/dharaframes/dhara4.jpg","assets/dharaframes/dhara5.jpg","assets/dharaframes/dhara6.jpg","assets/dharaframes/dhara7.jpg","assets/dharaframes/dhara8.jpg"] },
-  { title:"Animations", tag:"Animations", img:"assets/work-animations.jpg", desc:"Motion and animation explorations.", images:[] }
+  {
+    title: "Wildlife",
+    tag: "Wildlife Ai illustrations",
+    img: "assets/lion.jpg",
+    desc: "A collection of AI-generated wildlife illustrations focused on realistic visuals, detailed textures and cinematic natural aesthetics.",
+    images: [
+      "assets/wildlife/wl1.jpg",
+      "assets/wildlife/wl2.jpg",
+      "assets/wildlife/wl3.jpg"
+    ]
+  },
+  {
+    title: "Theyyam",
+    tag: "Theyyam Art illustrations",
+    img: "assets/PiTheyyam.jpg",
+    desc: "A series of rotoscopic AI-generated illustrations inspired by the visual richness, movement, and cultural essence of Theyyam.",
+    images: [
+      "assets/Theyyam/theyyam1.jpg",
+      "assets/Theyyam/theyyam2.jpg",
+      "assets/Theyyam/theyyam3.jpg",
+      "assets/Theyyam/theyyam4.jpg"
+    ]
+  },
+  {
+    title: "Thumbnail ideas",
+    tag: "AI Thumbnail",
+    img: "assets/davincci.jpg",
+    desc: "A collection of AI-generated thumbnail concepts designed for high visual impact, bold storytelling and attention-driven digital content.",
+    images: [
+      "assets/thumbnails/tn1.jpg",
+      "assets/thumbnails/tn2.jpg",
+      "assets/thumbnails/tn3.jpg",
+      "assets/thumbnails/tn4.jpg",
+      "assets/thumbnails/tn5.jpg"
+    ]
+  },
+  {
+    title: "The Verdict",
+    tag: "Drama Short Film",
+    img: "assets/theverdict/verdict-cover.jpg",
+    video: "https://drive.google.com/file/d/1NL4STIsnbK3RPa6ILWHVmA2VgShnBPxX/preview",
+    desc: "A cinematic AI drama short that explores tension, consequence, and human emotion through striking visuals and bold narrative direction.",
+    images: [
+      "assets/theverdict/tv1.jpg",
+      "assets/theverdict/tv2.jpg",
+      "assets/theverdict/tv3.jpg",
+      "assets/theverdict/tv4.jpg",
+      "assets/theverdict/tv5.jpg",
+      "assets/theverdict/tv6.jpg",
+      "assets/theverdict/tv7.jpg",
+      "assets/theverdict/tv8.jpg",
+      "assets/theverdict/tv9.jpg",
+      "assets/theverdict/tv10.jpg",
+      "assets/theverdict/tv11.jpg",
+      "assets/theverdict/tv12.jpg",
+      "assets/theverdict/tv13.jpg",
+      "assets/theverdict/tv14.jpg",
+      "assets/theverdict/tv15.jpg",
+
+    ]
+  },
+  {
+    title: "Ai Walls",
+    tag: "AI walls",
+    img: "assets/work-week-plate.jpg",
+    desc: "A curated collection of AI-generated wallpapers exploring futuristic visuals, abstract compositions, and immersive digital aesthetics.",
+    images: [
+      "assets/aiwalls/aw1.jpg",
+      "assets/aiwalls/aw2.jpg",
+      "assets/aiwalls/aw3.jpg",
+      "assets/aiwalls/aw4.jpg",
+      "assets/aiwalls/aw5.jpg"
+    ]
+  },
+  {
+    title: "Dhara ad campaign",
+    tag: "Dhara AD",
+    img: "assets/work-snacntrack.jpg",
+    video: "https://drive.google.com/file/d/1yUIFtiUWuEW_SkFGlVFKTnjaLZn9b2it/preview",
+    desc: "A modern advertising campaign for DHARA featuring AI-crafted visuals, refined layouts, and warm brand storytelling.",
+    images: [
+      "assets/dharaframes/dhara1.jpg",
+      "assets/dharaframes/dhara2.jpg",
+      "assets/dharaframes/dhara3.jpg",
+      "assets/dharaframes/dhara4.jpg",
+      "assets/dharaframes/dhara5.jpg",
+      "assets/dharaframes/dhara6.jpg",
+      "assets/dharaframes/dhara7.jpg",
+      "assets/dharaframes/dhara8.jpg"
+    ]
+  },
+  {
+    title: "Animations",
+    tag: "Animations",
+    img: "assets/work-animations.jpg",
+    desc: "Motion and animation explorations.",
+    images: []
+  }
 ];
 
-// CAROUSEL
+// ─── CAROUSEL ─────────────────────────────────────────────────────────────────
 let ci = 1;
 const carouselRow = document.getElementById('carousel');
 const carouselTag = document.getElementById('carousel-tag');
@@ -363,7 +526,7 @@ document.getElementById('prev-btn').addEventListener('click', () => { ci = (ci -
 document.getElementById('next-btn').addEventListener('click', () => { ci = (ci + 1) % featured.length; renderCarousel(); });
 renderCarousel();
 
-// ALL WORKS
+// ─── ALL WORKS GRID ───────────────────────────────────────────────────────────
 const worksGrid = document.getElementById('works-grid');
 works.forEach(w => {
   const fig = document.createElement('figure');
@@ -382,7 +545,7 @@ works.forEach(w => {
   worksGrid.appendChild(fig);
 });
 
-// LIGHTBOX
+// ─── LIGHTBOX ─────────────────────────────────────────────────────────────────
 const overlay  = document.getElementById('lightbox-overlay');
 const lbTop    = document.getElementById('lightbox-top');
 const lbGrid   = document.getElementById('lightbox-grid');
@@ -399,7 +562,8 @@ function openLightbox(w) {
     lbTop.appendChild(v);
   } else {
     const img = document.createElement('img');
-    img.src = w.img; img.alt = w.title; img.className = 'media'; lbTop.appendChild(img);
+    img.src = w.img; img.alt = w.title; img.className = 'media';
+    lbTop.appendChild(img);
   }
   const info = document.createElement('div');
   info.className = 'lightbox-info';
@@ -411,9 +575,9 @@ function openLightbox(w) {
     div.className = 'lightbox-thumb lightbox-pop';
     div.style.animationDelay = (120 + n * 70) + 'ms';
     const img = document.createElement('img');
-    img.src = src; img.alt = w.title + ' Image ' + (n+1); img.loading = 'lazy';
+    img.src = src; img.alt = w.title + ' Image ' + (n + 1); img.loading = 'lazy';
     const lbl = document.createElement('span');
-    lbl.className = 'img-label'; lbl.textContent = 'Image ' + (n+1);
+    lbl.className = 'img-label'; lbl.textContent = 'Image ' + (n + 1);
     div.style.cursor = 'zoom-in';
     div.appendChild(img); div.appendChild(lbl); lbGrid.appendChild(div);
     div.addEventListener('click', () => openViewer(src));
@@ -426,7 +590,7 @@ closeBtn.addEventListener('click', closeLightbox);
 overlay.addEventListener('click', e => { if (e.target === overlay) closeLightbox(); });
 window.addEventListener('keydown', e => { if (e.key === 'Escape') { closeViewer(); closeLightbox(); } });
 
-// FULL-SIZE IMAGE VIEWER
+// ─── FULL-SIZE IMAGE VIEWER ───────────────────────────────────────────────────
 const viewer = document.createElement('div');
 viewer.id = 'img-viewer';
 viewer.style.cssText = 'display:none;position:fixed;inset:0;z-index:100;background:rgba(0,0,0,0.92);align-items:center;justify-content:center;cursor:zoom-out;';
@@ -445,10 +609,7 @@ function closeViewer() {
 viewer.addEventListener('click', e => { if (e.target === viewer || e.target === viewerImg) closeViewer(); });
 document.getElementById('viewer-close').addEventListener('click', closeViewer);
 
-// Only lightbox grid thumbnails open full-size viewer on click
-// (handled per-div via div.addEventListener above)
-
-// HERO PARALLAX
+// ─── HERO PARALLAX ────────────────────────────────────────────────────────────
 const hero = document.getElementById('hero');
 hero.addEventListener('mousemove', e => {
   const r = hero.getBoundingClientRect();
@@ -457,7 +618,7 @@ hero.addEventListener('mousemove', e => {
 });
 hero.addEventListener('mouseleave', () => { hero.style.setProperty('--mx','0'); hero.style.setProperty('--my','0'); });
 
-// SKILL TILES
+// ─── SKILL TILES ──────────────────────────────────────────────────────────────
 const skillsBar = document.getElementById('skills-bar');
 const tiles = Array.from(skillsBar.querySelectorAll('.skill-wrap'));
 window.addEventListener('mousemove', e => {
@@ -469,7 +630,7 @@ window.addEventListener('mousemove', e => {
 });
 skillsBar.addEventListener('mouseleave', () => tiles.forEach(t => t.style.setProperty('--dist','1')));
 
-// COPY EMAIL
+// ─── COPY EMAIL ───────────────────────────────────────────────────────────────
 const copyBtn  = document.getElementById('copy-email-btn');
 const copyIcon = document.getElementById('copy-icon');
 const chkIcon  = document.getElementById('check-icon');
